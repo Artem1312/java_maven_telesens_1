@@ -12,7 +12,6 @@ public class Demo {
 
         List<Person> list = new ArrayList<>(Arrays.asList(p1,p2,p3));
 
-
         list.sort(Comparator.comparing(Person::getFirstName));
         list.sort((o1,o2) -> o1.getLastName().compareTo(o2.getLastName()));
 
