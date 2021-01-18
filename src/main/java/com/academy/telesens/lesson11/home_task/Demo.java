@@ -2,10 +2,11 @@ package com.academy.telesens.lesson11.home_task;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.*;
+import java.util.Properties;
 
 public class Demo {
     /*
@@ -119,55 +120,67 @@ public class Demo {
 			информация о само абоненте (взять через toString())
      */
     public static void main(String[] args) {
+        /*
+        2) Написать Java приложение, которое наполнит файл subscribers.xlsx, случайными данными:
 
-        Workbook workbook = new XSSFWorkbook();
+	a) Наполнить таблицу абонентов excel(2000 строк):
+		- имена фамилии взять в соответстсвующих файлах (см. 'java-part.properties') со списком имен/фамилий (женских/мужских);
+		- возраст генерировать случайно от 5 до 90 (можно использовать Гауссово распределение для этого диапазона)
+			(диапазон брать из файла 'java-part.properties')
 
-        Sheet sheet = workbook.createSheet("Persons");
-        sheet.setColumnWidth(0, 6000);
-        sheet.setColumnWidth(1, 4000);
+	b)  Телефонные номера для каждого оператора со следующими префиксами:
+		- Life номера с префиксами: 38063*******, 38093*******, 38073*******
+		- Kievstar номера с префиксами: 38097*******, 38067*******, 38098*******
+		- Vodafone номера с префиксами: 38050*******, 38066*******, 38095*******
 
-        Row header = sheet.createRow(0);
-
-        CellStyle headerStyle = workbook.createCellStyle();
-        //headerStyle.setFillForegroundColor(IndexedColors.LIGHT__BLUE.getIndex());
-        //headerStyle.setFillPattern(FillPatternType.SOLID__FOREGROUND);
-
-        XSSFFont font = ((XSSFWorkbook) workbook).createFont();
-        font.setFontName("Arial");
-        font.setFontHeightInPoints((short) 16);
-        font.setBold(true);
-        headerStyle.setFont(font);
-
-        Cell headerCell = header.createCell(0);
-        headerCell.setCellValue("Name");
-        headerCell.setCellStyle(headerStyle);
-
-        headerCell = header.createCell(1);
-        headerCell.setCellValue("Age");
-        headerCell.setCellStyle(headerStyle);
-
-        CellStyle style = workbook.createCellStyle();
-        style.setWrapText(true);
-
-        Row row = sheet.createRow(2);
-        Cell cell = row.createCell(0);
-        cell.setCellValue("John Smith");
-        cell.setCellStyle(style);
-
-        cell = row.createCell(1);
-        cell.setCellValue(20);
-        cell.setCellStyle(style);
-
-        //File currDir = new File(".");
-        File currDir = new File("C:/java-maven-1/src/main/java/com/academy/telesens/lesson11/home_task/");
-        String path = currDir.getAbsolutePath();
-        String fileLocation = path.substring(0, path.length() - 1) + "temp.xlsx";
-
-//        FileOutputStream outputStream = new FileOutputStream(fileLocation);
-//        workbook.write(outputStream);
-//        workbook.close();
+	Результат subscribers.xlsx должен выглядеть так:
+		   1 | Васильев  | Иван | м | 23 | 380630025465 | Life
+		   2 | Петрова   | Катя | ж | 34 | 380670058694 | Kievstar
+		...
+		2000 | Борисов   | Коля | м | 48 | 380500025465 | Vodafone
+		Всего 200 случайных строк
+         */
+        Properties properties = new Properties();
+        File file = new File("src/main/resources/java-part.properties");
+        String path = "";
+        try (FileInputStream fis = new FileInputStream(file)) {
+            properties.load(fis);
+            path = properties.getProperty("subscriber.exc");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
-
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("Subscribers");
+        Object[][] date = {
+                {1,"Васильев", "Иван", "m", 23, "380630025465", "Life"},
+                {1,"Васильев", "Иван", "m", 23, "380630025465", "Life"}
+        };
+        for (int r = 0; r < 2; r++) {
+            Row row = sheet.createRow(r);
+            Cell cellIndex = row.createCell(0);
+            Cell cellSecondName = row.createCell(1);
+            Cell cellFirstName = row.createCell(2);
+            Cell cellGender = row.createCell(3);
+            Cell cellAge = row.createCell(4);
+            Cell cellPhoneNumber = row.createCell(5);
+            Cell cellOperator = row.createCell(6);
+            
+            cellIndex.setCellValue((int)date[r][0]);
+            cellSecondName.setCellValue((String) date[r][1]);
+            cellFirstName.setCellValue((String)date[r][2]);
+            cellGender.setCellValue((String)date[r][3]);
+            cellAge.setCellValue((int)date[r][4]);
+            cellPhoneNumber.setCellValue((String)date[r][5]);
+            cellOperator.setCellValue((String)date[r][6]);
+        }
+        try (FileOutputStream out = new FileOutputStream(new File(path))) { 
+            workbook.write(out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
