@@ -1,5 +1,7 @@
 package com.academy.telesens.Operator;
 
+import com.academy.telesens.Person.Gender;
+
 public class Demo2 {
     public static void main(String[] args) {
         System.out.println(
@@ -7,7 +9,7 @@ public class Demo2 {
         );
 
         Operator operator = new Operator("Vodafone", "Kiev");
-        Subscriber subscriber = new Subscriber("Иван", "Иванов", 25, 'm', "0661234567", operator);
+        Subscriber subscriber = new Subscriber("Иван", "Иванов", 25, Gender.MALE, "0661234567", operator);
 //        subscriber.setFirstName("Петя");
         String profile = subscriber.getProfile();
         System.out.println(profile);

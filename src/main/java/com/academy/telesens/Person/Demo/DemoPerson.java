@@ -1,5 +1,6 @@
 package com.academy.telesens.Person.Demo;
 
+import com.academy.telesens.Person.Gender;
 import com.academy.telesens.Person.Person;
 
 public class DemoPerson {
@@ -9,7 +10,7 @@ public class DemoPerson {
         person.setFirstName("Artem");
         person.setLastName("Apukhtin");
         person.setAge(29);
-        person.setGender('m');
+        person.setGender(Gender.MALE);
 
         person.getProfile();
     }

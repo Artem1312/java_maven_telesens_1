@@ -4,6 +4,7 @@ import com.academy.telesens.Person.Gender;
 import com.academy.telesens.Person.Person;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -25,9 +26,9 @@ public class SortDemo {
         System.out.println(list1.equals(list2));
 
         List<Person> people = new ArrayList<>();
-        people.add(new Person("Vasa", "Ivanov", 25, 'm'));
-        people.add(new Person("sidorov", "Ivanov", 25, 'm'));
-        people.add(new Person("helen", "petrovna", 25, 'f'));
+        people.add(new Person("Vasa", "Ivanov", 25, Gender.MALE));
+        people.add(new Person("sidorov", "Ivanov", 25, Gender.MALE));
+        people.add(new Person("helen", "petrovna", 25, Gender.FEMALE));
 
 //        //people.sort(new PersonComparator());
 //        people.sort((o1,o2)-> {
@@ -38,7 +39,11 @@ public class SortDemo {
 //            if (o1.getAge() > o2.getAge())
 //                return 1;
 //        });
-//        System.out.println(people);
+        //System.out.println((Object) people);
+        System.out.println(Arrays.toString(people.toArray()));
+        for(int i = 0; i < people.size(); i++) {
+            System.out.println(people.get(i));
+        }
     }
 }
 

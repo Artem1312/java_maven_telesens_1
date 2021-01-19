@@ -1,5 +1,7 @@
 package com.academy.telesens.Operator;
 
+import com.academy.telesens.Person.Gender;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -9,7 +11,7 @@ public class Demo {
         Subscriber [] subs = new Subscriber[100];
 
         int[] age = new int[100];
-        char[] gender = new char[100];
+        Gender[] gender = new Gender[100];
 
         for (int i = 0; i < age.length ; i++) {
             age[i] = random.nextInt(90+1-4)+4;
@@ -17,8 +19,8 @@ public class Demo {
 
         for (int g = 0; g < gender.length; g++) {
             if(random.nextInt(2) == 0){
-                gender[g] = 'm';
-            } else { gender[g] = 'f';}
+                gender[g] = Gender.MALE;
+            } else { gender[g] = Gender.FEMALE;}
         }
         //System.out.println(Arrays.toString(age));
         //System.out.println(Arrays.toString(gender));
@@ -34,7 +36,7 @@ public class Demo {
 
         for (int j = 0; j < subs.length ; j++) {
             subs[j] = new Subscriber(); // надо явно создать объект для каждой ячейки
-            if(gender[j] == 'm'){
+            if(gender[j] == Gender.MALE){
                 subs[j].setFirstName(manName[random.nextInt(manName.length)]);
                 subs[j].setLastName(manSurname[random.nextInt(manSurname.length)]);
             } else {

@@ -1,11 +1,14 @@
 package com.academy.telesens.lesson11.home_task;
 
+import com.academy.telesens.Person.Person;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class Demo {
@@ -155,11 +158,39 @@ public class Demo {
 
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Subscribers");
-        Object[][] date = {
+//        Object[][] date = {
+//                {1,"Васильев", "Иван", "m", 23, "380630025465", "Life"},
+//                {1,"Васильев", "Иван", "m", 23, "380630025465", "Life"}
+//        };
+
+        Object[][] user = {
                 {1,"Васильев", "Иван", "m", 23, "380630025465", "Life"},
                 {1,"Васильев", "Иван", "m", 23, "380630025465", "Life"}
         };
-        for (int r = 0; r < 2; r++) {
+
+        //ArrayList<Object> date = new ArrayList<>(Arrays.asList(user));
+        ArrayList<Object> date = new ArrayList<>(Arrays.asList(new ArrayList<>(Arrays.asList(user))));
+
+        System.out.println(Arrays.deepToString(date.toArray()));
+        System.out.println(Arrays.deepToString((Object[]) date.get(0)) );
+
+
+        //System.out.println( (Arrays.deepToString(((Object[]) date.get(0)))  ) );
+        //Object[] test =  {date.get(1)};
+        //System.out.println(Arrays.toString(test);
+
+//        for (int i = 0; i <test.length ; i++) {
+//            System.out.println(i);
+//        }
+
+        //String k = (String) test[2];
+        //System.out.println(k);
+        //System.out.println(Arrays.toString((Object[]) test[0]));
+
+        //System.out.println(date.stream());
+
+
+        for (int r = 0; r < 1; r++) {
             Row row = sheet.createRow(r);
             Cell cellIndex = row.createCell(0);
             Cell cellSecondName = row.createCell(1);
@@ -169,13 +200,18 @@ public class Demo {
             Cell cellPhoneNumber = row.createCell(5);
             Cell cellOperator = row.createCell(6);
             
-            cellIndex.setCellValue((int)date[r][0]);
-            cellSecondName.setCellValue((String) date[r][1]);
-            cellFirstName.setCellValue((String)date[r][2]);
-            cellGender.setCellValue((String)date[r][3]);
-            cellAge.setCellValue((int)date[r][4]);
-            cellPhoneNumber.setCellValue((String)date[r][5]);
-            cellOperator.setCellValue((String)date[r][6]);
+//            cellIndex.setCellValue((int)date[r][0]);
+//            cellIndex.setCellValue((date.get()[r][0]));
+//
+//            cellSecondName.setCellValue((String) date[r][1]);
+//            cellFirstName.setCellValue((String)date[r][2]);
+//            cellGender.setCellValue((String)date[r][3]);
+//            cellAge.setCellValue((int)date[r][4]);
+//            cellPhoneNumber.setCellValue((String)date[r][5]);
+//            cellOperator.setCellValue((String)date[r][6]);
+
+
+
         }
         try (FileOutputStream out = new FileOutputStream(new File(path))) { 
             workbook.write(out);

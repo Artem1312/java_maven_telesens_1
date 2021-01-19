@@ -7,7 +7,7 @@ public class Person {
     protected String firstName;
     protected String lastName;
     protected int age;
-    protected char gender;
+    protected Gender gender;
 //    private String firstName;
 //    private String lastName;
 //    private int age;
@@ -17,7 +17,7 @@ public class Person {
 
     }
 
-    public Person (String firstName, String lastName, int age, char gender) {
+    public Person (String firstName, String lastName, int age, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -36,7 +36,7 @@ public class Person {
         return age;
     }
 
-    public char getGender(){
+    public Gender getGender(){
         return gender;
     }
 
@@ -61,16 +61,24 @@ public class Person {
 //        return age;
 //    }
 
-    public void setGender(char gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
-    public void set(String firstName, String lastName, int age, char gender){
+    public void set(String firstName, String lastName, int age, Gender gender){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
     }
+
+    public Person(String firstName, String lastName, Integer age, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.gender = gender;
+    }
+
     // Другие методы
     public String getProfile(){
         return String.format(" First name: %s\n Last name: %s\n Age: %s\n Gender: %s\n",
@@ -89,5 +97,15 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                '}';
     }
 }

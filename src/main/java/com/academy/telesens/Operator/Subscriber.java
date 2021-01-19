@@ -1,5 +1,6 @@
 package com.academy.telesens.Operator;
 
+import com.academy.telesens.Person.Gender;
 import com.academy.telesens.Person.Person;
 
 public class Subscriber  extends Person {
@@ -7,7 +8,7 @@ public class Subscriber  extends Person {
     private Operator operator;
     private String firstName;
     private String lastName;
-    private char gender = 'm';
+    private Gender gender = Gender.MALE;
     private int age = 20;
 
     //констркутор
@@ -18,7 +19,7 @@ public class Subscriber  extends Person {
     public Subscriber(String firstName,
                        String lastName,
                        Integer age,
-                       Character gender,
+                       Gender gender,
                        String phoneNumber,
                        Operator operator){
 
@@ -66,11 +67,11 @@ public class Subscriber  extends Person {
     }
 
     @Override
-    public char getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
