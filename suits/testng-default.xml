@@ -4,9 +4,9 @@
 <suite name="default-suite">
     <test name="automation practice demo">
         <classes>
-            <!--<class name="com.academy.test.AutomationPracticeTest" />-->
-            <!--<class name="com.academy.test.ValidLoginTest" />-->
-            <!--<class name="com.academy.test.InvalidLoginTest" />-->
+            <class name="com.academy.test.AutomationPracticeTest" />
+            <class name="com.academy.test.ValidLoginTest" />
+            <class name="com.academy.test.InvalidLoginTest" />
             <class name="com.academy.test.InvalidAuthTest" />
         </classes>
     </test>
