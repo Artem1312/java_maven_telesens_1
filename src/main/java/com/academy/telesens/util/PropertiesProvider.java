@@ -28,4 +28,9 @@ public class PropertiesProvider {
     public static String get(String key) {
         return prop.getProperty(key);
     }
+
+    public static String get(String key, String nameFileProperties) {
+        DEFAULT_PROP_FILE = nameFileProperties;
+        return prop.getProperty(key);
+    }
 }

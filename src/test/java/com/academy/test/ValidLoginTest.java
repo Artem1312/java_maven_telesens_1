@@ -58,6 +58,9 @@ public class ValidLoginTest {
         driver.findElement(By.linkText("Sign out")).click();
     }
 
+
+
+
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
         driver.quit();

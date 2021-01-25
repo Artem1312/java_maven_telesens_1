@@ -17,7 +17,7 @@ import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 
-public class InvalidLoginTest {
+public class InvalidAuthTest {
     private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
@@ -33,7 +33,7 @@ public class InvalidLoginTest {
         baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        File file = new File(PropertiesProvider.get("automation.auth.invalid.data.csv"));
+        File file = new File(PropertiesProvider.get("automation.auth.data.csv","automationpractice.properties"));
         Reader in = new FileReader(file);
 
         records = new ArrayList<List<String>>();
@@ -105,6 +105,82 @@ public class InvalidLoginTest {
         String email = records.get(2).get(0).split(";")[0];
         String passw = records.get(2).get(0).split(";")[1];
         String answer = records.get(2).get(0).split(";")[2];
+
+        driver.get("http://automationpractice.com/index.php");
+        driver.findElement(By.linkText("Sign in")).click();
+        driver.findElement(By.id("email")).click();
+        driver.findElement(By.id("email")).clear();
+        driver.findElement(By.id("email")).sendKeys(email);
+        driver.findElement(By.xpath("//form[@id='login_form']/div/div[2]")).click();
+        driver.findElement(By.id("passwd")).click();
+        driver.findElement(By.id("passwd")).clear();
+        driver.findElement(By.id("passwd")).sendKeys(passw);
+        driver.findElement(By.xpath("//form[@id='login_form']/div/p[2]")).click();
+        driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
+
+        String eerMsgExpected3 = answer;
+        String eerMsgActual3 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
+        Assert.assertEquals(eerMsgExpected3, eerMsgActual3);
+    }
+
+    @Test
+    public void testUntitledTestCase4() throws Exception {
+
+        // test 1
+        String email = records.get(3).get(0).split(";")[0];
+        String passw = records.get(3).get(0).split(";")[1];
+        String answer = records.get(3).get(0).split(";")[2];
+
+        driver.get("http://automationpractice.com/index.php");
+        driver.findElement(By.linkText("Sign in")).click();
+        driver.findElement(By.id("email")).click();
+        driver.findElement(By.id("email")).clear();
+        driver.findElement(By.id("email")).sendKeys(email);
+        driver.findElement(By.xpath("//form[@id='login_form']/div/div[2]")).click();
+        driver.findElement(By.id("passwd")).click();
+        driver.findElement(By.id("passwd")).clear();
+        driver.findElement(By.id("passwd")).sendKeys(passw);
+        driver.findElement(By.xpath("//form[@id='login_form']/div/p[2]")).click();
+        driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
+
+        String eerMsgExpected1 = answer;
+        String eerMsgActual1 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
+        Assert.assertEquals(eerMsgExpected1, eerMsgActual1);
+    }
+
+    @Test
+    public void testUntitledTestCase5() throws Exception {
+
+        //test2
+        String email = records.get(4).get(0).split(";")[0];
+        String passw = records.get(4).get(0).split(";")[1];
+        String answer = records.get(4).get(0).split(";")[2];
+
+        driver.get("http://automationpractice.com/index.php");
+        driver.findElement(By.linkText("Sign in")).click();
+        driver.findElement(By.id("email")).click();
+        driver.findElement(By.id("email")).clear();
+        driver.findElement(By.id("email")).sendKeys(email);
+        driver.findElement(By.xpath("//form[@id='login_form']/div/div[2]")).click();
+        driver.findElement(By.id("passwd")).click();
+        driver.findElement(By.id("passwd")).clear();
+        driver.findElement(By.id("passwd")).sendKeys(passw);
+        driver.findElement(By.xpath("//form[@id='login_form']/div/p[2]")).click();
+        driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
+
+        String eerMsgExpected2 = answer;
+        String eerMsgActual2 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
+        Assert.assertEquals(eerMsgExpected2, eerMsgActual2);
+
+    }
+
+    @Test
+    public void testUntitledTestCase6() throws Exception {
+
+        //test3
+        String email = records.get(5).get(0).split(";")[0];
+        String passw = records.get(5).get(0).split(";")[1];
+        String answer = records.get(5).get(0).split(";")[2];
 
         driver.get("http://automationpractice.com/index.php");
         driver.findElement(By.linkText("Sign in")).click();

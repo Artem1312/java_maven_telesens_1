@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.academy.telesens.util.PropertiesProvider;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
@@ -19,10 +20,10 @@ public class AutomationPracticeTest {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
-        //System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
-        System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
-        //driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
+        //System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
@@ -38,6 +39,10 @@ public class AutomationPracticeTest {
         driver.findElement(By.id("passwd")).clear();
         driver.findElement(By.id("passwd")).sendKeys("111111");
         driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
+
+        String eerMsgExpected = "Authentication failed.";
+        String eerMsgActual = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
+        Assert.assertEquals(eerMsgExpected, eerMsgActual);
     }
 
     @AfterClass(alwaysRun = true)
@@ -46,39 +51,6 @@ public class AutomationPracticeTest {
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
-        }
-    }
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    private boolean isAlertPresent() {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
-
-    private String closeAlertAndGetItsText() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            if (acceptNextAlert) {
-                alert.accept();
-            } else {
-                alert.dismiss();
-            }
-            return alertText;
-        } finally {
-            acceptNextAlert = true;
         }
     }
 }
