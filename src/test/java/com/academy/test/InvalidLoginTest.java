@@ -4,10 +4,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
 import com.academy.telesens.util.PropertiesProvider;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -25,15 +30,6 @@ public class InvalidLoginTest {
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
-    private String email1;
-    private String email2;
-    private String email3;
-    private String passw1;
-    private String passw2;
-    private String passw3;
-    private String answer1;
-    private String answer2;
-    private String answer3;
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
@@ -52,64 +48,43 @@ public class InvalidLoginTest {
 
         File file = new File(PropertiesProvider.get("automation.auth.invalid.data.csv"));
         Reader in = new FileReader(file);
-        Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
-        for (CSVRecord record : records) {
-            email1 = record.get(0).split(";")[0];
-            email2 = record.get(0).split(";")[1];
-            email3 = record.get(0).split(";")[2];
-            passw1 = record.get(1).split(";")[0];
-            passw2 = record.get(1).split(";")[1];
-            passw3 = record.get(1).split(";")[2];
-            answer1 = record.get(2).split(";")[0];
-            answer2 = record.get(2).split(";")[1];
-            answer3 = record.get(2).split(";")[2];
 
+        List<List<String>> records = new ArrayList<List<String>>();
+        try (CSVReader csvReader = new CSVReader(new FileReader(file));) {
+            String[]values = null;
+            while ((values = csvReader.readNext()) != null) {
+                records.add(Arrays.asList(values));
+            }
+        } catch (CsvValidationException e) {
+            e.printStackTrace();
         }
 
+        for (int i = 0; i < records.size(); i++) {
+            System.out.println(records.get(i).get(0).split(";")[0]);
 
+            String email = records.get(i).get(0).split(";")[0];
+            String passw = records.get(i).get(0).split(";")[1];
+            String answer = records.get(i).get(0).split(";")[2];
 
+            driver.get("http://automationpractice.com/index.php");
+            driver.findElement(By.linkText("Sign in")).click();
+            driver.findElement(By.id("email")).click();
+            driver.findElement(By.id("email")).clear();
+            driver.findElement(By.id("email")).sendKeys(email);
+            driver.findElement(By.id("passwd")).click();
+            driver.findElement(By.id("passwd")).clear();
+            driver.findElement(By.id("passwd")).sendKeys(passw);
+            driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
 
-        driver.get("http://automationpractice.com/index.php");
-        driver.findElement(By.linkText("Sign in")).click();
-        driver.findElement(By.id("email")).click();
-        driver.findElement(By.id("email")).clear();
-        driver.findElement(By.id("email")).sendKeys(email1);
-        driver.findElement(By.id("passwd")).click();
-        driver.findElement(By.id("passwd")).clear();
-        driver.findElement(By.id("passwd")).sendKeys(passw1);
-        driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
-
-        String eerMsgExpected1 = answer1;
-        String eerMsgActual1 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
-        Assert.assertEquals(eerMsgExpected1, eerMsgActual1);
-
-
-        driver.findElement(By.id("email")).click();
-        driver.findElement(By.id("email")).clear();
-        driver.findElement(By.id("email")).sendKeys(email2);
-        driver.findElement(By.id("passwd")).click();
-        driver.findElement(By.id("passwd")).clear();
-        driver.findElement(By.id("passwd")).sendKeys(passw2);
-        driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
-
-        String eerMsgExpected2 = answer2;
-        String eerMsgActual2 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
-        Assert.assertEquals(eerMsgExpected2, eerMsgActual2);
-
-
-        driver.findElement(By.id("email")).click();
-        driver.findElement(By.id("email")).clear();
-        driver.findElement(By.id("email")).sendKeys(email3);
-        driver.findElement(By.id("passwd")).click();
-        driver.findElement(By.id("passwd")).clear();
-        driver.findElement(By.id("passwd")).sendKeys(passw3);
-        driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
-
-        String eerMsgExpected3 = answer3;
-        String eerMsgActual3 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
-        Assert.assertEquals(eerMsgExpected3, eerMsgActual3);
-
-
+            String eerMsgExpected1 = answer;
+            String eerMsgActual1 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
+            Assert.assertEquals(eerMsgExpected1, eerMsgActual1);
+            driver.findElement(By.id("email")).click();
+            driver.findElement(By.id("email")).clear();
+            driver.findElement(By.id("passwd")).click();
+            driver.findElement(By.id("passwd")).clear();
+            driver.wait(3000);
+        }
     }
 
     @AfterClass(alwaysRun = true)
@@ -118,39 +93,6 @@ public class InvalidLoginTest {
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
-        }
-    }
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    private boolean isAlertPresent() {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
-
-    private String closeAlertAndGetItsText() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            if (acceptNextAlert) {
-                alert.accept();
-            } else {
-                alert.dismiss();
-            }
-            return alertText;
-        } finally {
-            acceptNextAlert = true;
         }
     }
 }
