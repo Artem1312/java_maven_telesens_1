@@ -1,4 +1,4 @@
-package com.academy.test;
+package com.academy.telesens.util;
 
 import com.academy.telesens.util.PropertiesProvider;
 import com.opencsv.CSVParser;
