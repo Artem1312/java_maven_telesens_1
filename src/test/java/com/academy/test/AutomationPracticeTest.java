@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.academy.telesens.util.PropertiesProvider;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
@@ -31,7 +32,9 @@ public class AutomationPracticeTest {
     @Test
     public void testUntitledTestCase() throws Exception {
         driver.get("http://automationpractice.com/index.php");
-        driver.findElement(By.linkText("Sign in")).click();
+        //driver.findElement(By.linkText("Sign in")).click();
+        WebElement elSignIn = driver.findElement(By.linkText("Sign in"));
+        elSignIn.click();
         driver.findElement(By.id("email")).click();
         driver.findElement(By.id("email")).clear();
         driver.findElement(By.id("email")).sendKeys("apukhtin.artem@gmail.com");
@@ -43,6 +46,30 @@ public class AutomationPracticeTest {
         String eerMsgExpected = "Authentication failed.";
         String eerMsgActual = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
         Assert.assertEquals(eerMsgExpected, eerMsgActual);
+    }
+
+    @Test
+    public void testWomenCategory(){
+        driver.get("http://automationpractice.com/index.php");
+        driver.findElement(By.linkText("Women")).click();
+
+        String expectedTitleBlockName = "WOMEN";
+        String actualTitleBlockName = driver.findElement(By.xpath("//*[@id=\"categories_block_left\"]/h2")).getText();
+        Assert.assertEquals(expectedTitleBlockName, actualTitleBlockName);
+
+        String expectedCategoryName = "Women";
+        String actualCategoryName = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/span")).getText();
+        Assert.assertEquals(expectedCategoryName, actualCategoryName);
+
+        String expectedClassName = "WOMEN ";
+        String actualClassName = driver.findElement(By.xpath("//*[@id=\"center_column\"]/h1/span[1]")).getText();
+        Assert.assertEquals(expectedClassName, actualClassName);
+
+        String expectedProductCount = "Showing 1 - 7 of 7 items";
+        String actualProductCount = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[4]/div/div[2]")).getText();
+        Assert.assertEquals(expectedProductCount, actualProductCount);
+
+
     }
 
     @AfterClass(alwaysRun = true)
