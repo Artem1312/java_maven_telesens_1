@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.academy.telesens.util.PropertiesProvider;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -68,7 +69,23 @@ public class AutomationPracticeTest {
         String expectedProductCount = "Showing 1 - 7 of 7 items";
         String actualProductCount = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[4]/div/div[2]")).getText();
         Assert.assertEquals(expectedProductCount, actualProductCount);
+    }
 
+    @Test
+    public void testMove(){
+        driver.get("http://automationpractice.com/index.php");
+        driver.findElement(By.linkText("Women")).click();
+        WebElement slider = driver.findElement(By.xpath("//*[@id=\"layered_price_slider\"]/a[1]"));
+        Actions webelement = new Actions(driver);
+        webelement.clickAndHold(slider).moveByOffset(50,0);
+
+//        do
+//            while();
+
+
+        String expSum = "$16.00 - $53.00";
+        String actSun = driver.findElement(By.xpath("//*[@id=\"layered_price_range\"]")).getText();
+        Assert.assertEquals(expSum, actSun);
 
     }
 
