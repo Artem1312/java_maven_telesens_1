@@ -42,15 +42,34 @@ public class TrueconfUserAriaLoginTest {
         driver.findElement(By.xpath("//*[@id=\"authorization__input-password\"]")).sendKeys("11");
 
         driver.findElement(By.xpath("//*[@id=\"authorization__button-sing-in\"]/span")).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+        String nameUser ="/html/body/div/div[1]/div[1]/div[1]/div/section/div/div/div[1]/div[1]/div/div[2]/div[1]";
+        while ((driver.findElement(By.xpath(nameUser)).getText()) == ""){
+            driver.manage().timeouts().pageLoadTimeout(1,TimeUnit.SECONDS);
         }
         String expEmail = "Artem {[{{/*-+!@#$%^&*()_+}}]}";
-        String actualEmail = driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/div[1]/div/section/div/div/div[1]/div[1]/div/div[2]/div[1]")).getText();
+        String actualEmail = driver.findElement(By.xpath(nameUser)).getText();
+        //System.out.println(actualEmail);
         Assert.assertEquals(actualEmail, expEmail);
+
+        driver.findElement(By.xpath("//*[@id=\"header__button-account\"]/span[4]")).click();
+        driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/header/div/div[2]/div/ul/li[2]/span[1]")).click();
+
+        String guestNamePage ="/html/body/div/div[1]/div[2]/div/div[1]/h1";
+        while ((driver.findElement(By.xpath(guestNamePage)).getText())==""){
+            driver.manage().timeouts().pageLoadTimeout(1,TimeUnit.SECONDS);
+        }
+        String expectedGuestNamePage = "Добро пожаловать на гостевую страницу сервера видеоконференций";
+        String actualGuestNamePage = driver.findElement(By.xpath(guestNamePage)).getText();
+        Assert.assertEquals(actualGuestNamePage, expectedGuestNamePage);
     }
+
+
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {

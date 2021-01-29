@@ -79,8 +79,9 @@ public class AutomationPracticeTest {
         Actions webelement = new Actions(driver);
         webelement.clickAndHold(slider).moveByOffset(50,0);
 
-//        do
-//            while();
+//        do{
+//
+//        } while();
 
 
         String expSum = "$16.00 - $53.00";
