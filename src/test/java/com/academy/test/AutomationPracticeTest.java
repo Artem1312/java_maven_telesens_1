@@ -1,5 +1,7 @@
 package com.academy.test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
@@ -20,31 +22,43 @@ public class AutomationPracticeTest {
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 
+    @Parameters("browser")
     @BeforeClass(alwaysRun = true)
-    public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
-        //System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
-        driver = new ChromeDriver();
-        //driver = new FirefoxDriver();
+    public void setUp(@Optional("chrome") String browser) throws Exception {
+        switch (browser){
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
+                driver = new ChromeDriver();
+                break;
+
+            case "firefox":
+                System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
+                driver = new FirefoxDriver();
+                break;
+            default:
+                throw new IllegalArgumentException(String.format("Browser %s not supported", browser ));
+        }
+
         baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
 
-    @Test
-    public void testUntitledTestCase() throws Exception {
+    @Test(dataProvider = "authDataProvider")
+    public void testUntitledTestCase(String userName, String password, String errExpected) throws Exception {
         driver.get("http://automationpractice.com/index.php");
         //driver.findElement(By.linkText("Sign in")).click();
         WebElement elSignIn = driver.findElement(By.linkText("Sign in"));
         elSignIn.click();
         driver.findElement(By.id("email")).click();
         driver.findElement(By.id("email")).clear();
-        driver.findElement(By.id("email")).sendKeys("apukhtin.artem@gmail.com");
+        driver.findElement(By.id("email")).sendKeys(userName);
         driver.findElement(By.id("passwd")).click();
         driver.findElement(By.id("passwd")).clear();
-        driver.findElement(By.id("passwd")).sendKeys("111111");
+        driver.findElement(By.id("passwd")).sendKeys(password);
         driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
 
-        String eerMsgExpected = "Authentication failed.";
+        String eerMsgExpected = errExpected;
         String eerMsgActual = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
         Assert.assertEquals(eerMsgExpected, eerMsgActual);
     }
@@ -90,12 +104,35 @@ public class AutomationPracticeTest {
 
     }
 
+    @DataProvider(name ="authDataProvider")
+    public Object[][] authDataProvider(){
+        Object[] case1 ={"apukhtin.artem@gmail.com","111111","Authentication failed."};
+        Object[] case2 ={"apukhtin.artem@gmail.com","","Password is required."};
+
+        List<Object[]> cases = new ArrayList<>();
+        cases.add(case1);
+        cases.add(case2);
+
+        // 1 способ создание массива из списка
+//        Object[][] tmp = new Object[0][0];
+//        Object[][] result = cases.toArray(tmp);
+
+        // 2 способ создание массива из списка
+        Object[][] result = cases.toArray(Object[][]::new);
+        return result;
+
+//        return new Object[][]{
+//            case1, case2
+//        };
+    }
+
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
-        driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
+        if (driver != null)
+            driver.quit();
+            String verificationErrorString = verificationErrors.toString();
+            if (!"".equals(verificationErrorString)) {
+                fail(verificationErrorString);
+            }
     }
 }
