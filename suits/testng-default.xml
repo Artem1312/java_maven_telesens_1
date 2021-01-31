@@ -9,6 +9,7 @@
             <!--<class name="com.academy.test.ValidLoginTest" />
             <class name="com.academy.test.InvalidLoginTest" />
             <class name="com.academy.test.InvalidAuthTest" />
+
             <class name="com.academy.test.TrueconfUserAriaLoginTest" />
             <class name="com.academy.test.TCInvalidLoginInUserAria" />-->
         </classes>

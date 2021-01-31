@@ -5,6 +5,8 @@
     <parameter name="browser" value="chrome" />
     <classes>
         <class name="com.academy.test.AutomationPracticeTest" />
+
+        <!--<class name="com.academy.test.InvalidAuthTest" />-->
         <!--<class name="com.academy.test.ValidLoginTest" />
             <class name="com.academy.test.InvalidLoginTest" />
             <class name="com.academy.test.InvalidAuthTest" />
@@ -16,7 +18,9 @@
     <parameter name="browser" value="firefox" />
     <classes>
         <class name="com.academy.test.AutomationPracticeTest" />
-        <!--<class name="com.academy.test.ValidLoginTest" />
+        <!--<class name="com.academy.test.InvalidAuthTest" />
+
+        <class name="com.academy.test.ValidLoginTest" />
             <class name="com.academy.test.InvalidLoginTest" />
             <class name="com.academy.test.InvalidAuthTest" />
             <class name="com.academy.test.TrueconfUserAriaLoginTest" />

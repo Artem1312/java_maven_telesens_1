@@ -20,6 +20,7 @@ import org.openqa.selenium.*;
 public class InvalidLoginTest {
     private WebDriver driver;
     private String baseUrl;
+    private String baseTestUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
     List<List<String>> records;
@@ -35,6 +36,8 @@ public class InvalidLoginTest {
 
         File file = new File(PropertiesProvider.get("automation.auth.invalid.data.csv"));
         Reader in = new FileReader(file);
+
+        baseTestUrl = PropertiesProvider.get("BaseAutomationPracticeUrl");
 
         records = new ArrayList<List<String>>();
         try (CSVReader csvReader = new CSVReader(new FileReader(file));) {
@@ -55,7 +58,7 @@ public class InvalidLoginTest {
         String passw = records.get(0).get(0).split(";")[1];
         String answer = records.get(0).get(0).split(";")[2];
 
-        driver.get("http://automationpractice.com/index.php");
+        driver.get(baseTestUrl);
         driver.findElement(By.linkText("Sign in")).click();
         driver.findElement(By.id("email")).click();
         driver.findElement(By.id("email")).clear();
@@ -80,7 +83,7 @@ public class InvalidLoginTest {
         String passw = records.get(1).get(0).split(";")[1];
         String answer = records.get(1).get(0).split(";")[2];
 
-        driver.get("http://automationpractice.com/index.php");
+        driver.get(baseTestUrl);
         driver.findElement(By.linkText("Sign in")).click();
         driver.findElement(By.id("email")).click();
         driver.findElement(By.id("email")).clear();
@@ -106,7 +109,7 @@ public class InvalidLoginTest {
         String passw = records.get(2).get(0).split(";")[1];
         String answer = records.get(2).get(0).split(";")[2];
 
-        driver.get("http://automationpractice.com/index.php");
+        driver.get(baseTestUrl);
         driver.findElement(By.linkText("Sign in")).click();
         driver.findElement(By.id("email")).click();
         driver.findElement(By.id("email")).clear();
