@@ -16,37 +16,15 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class AutomationPracticeTest {
-    private WebDriver driver;
-    private String baseUrl;
-    private boolean acceptNextAlert = true;
-    private StringBuffer verificationErrors = new StringBuffer();
+public class AutomationPracticeTest extends BaseTest{
 
-    @Parameters("browser")
-    @BeforeClass(alwaysRun = true)
-    public void setUp(@Optional("chrome") String browser) throws Exception {
-        switch (browser){
-            case "chrome":
-                System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
-                driver = new ChromeDriver();
-                break;
+    private String baseUrl = "http://automationpractice.com/index.php";
 
-            case "firefox":
-                System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
-                driver = new FirefoxDriver();
-                break;
-            default:
-                throw new IllegalArgumentException(String.format("Browser %s not supported", browser ));
-        }
 
-        baseUrl = "https://www.google.com/";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-    }
 
     @Test(dataProvider = "authDataProvider")
     public void testUntitledTestCase(String userName, String password, String errExpected) throws Exception {
-        driver.get("http://automationpractice.com/index.php");
+        driver.get(baseUrl);
         //driver.findElement(By.linkText("Sign in")).click();
         WebElement elSignIn = driver.findElement(By.linkText("Sign in"));
         elSignIn.click();
@@ -58,9 +36,9 @@ public class AutomationPracticeTest {
         driver.findElement(By.id("passwd")).sendKeys(password);
         driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
 
-        String eerMsgExpected = errExpected;
+
         String eerMsgActual = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
-        Assert.assertEquals(eerMsgExpected, eerMsgActual);
+        Assert.assertEquals(errExpected, eerMsgActual);
     }
 
     @Test
@@ -84,6 +62,12 @@ public class AutomationPracticeTest {
         String actualProductCount = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[4]/div/div[2]")).getText();
         Assert.assertEquals(expectedProductCount, actualProductCount);
     }
+
+//    @Test
+//    @Ignore
+//    public void testWomenCategory() {
+//
+//    }
 
     @Test
     public void testMove(){
@@ -124,15 +108,5 @@ public class AutomationPracticeTest {
 //        return new Object[][]{
 //            case1, case2
 //        };
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void tearDown() throws Exception {
-        if (driver != null)
-            driver.quit();
-            String verificationErrorString = verificationErrors.toString();
-            if (!"".equals(verificationErrorString)) {
-                fail(verificationErrorString);
-            }
     }
 }

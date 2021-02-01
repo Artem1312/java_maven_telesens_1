@@ -1,1 +1,8 @@
+com\academy\test\ValidLoginTest.class
+com\academy\test\NewFeatureTests.class
+com\academy\test\BaseTest.class
+com\academy\test\InvalidLoginTest.class
+com\academy\test\TCInvalidLoginInUserAria.class
+com\academy\test\InvalidAuthTest.class
 com\academy\test\AutomationPracticeTest.class
+com\academy\test\TrueconfUserAriaLoginTest.class

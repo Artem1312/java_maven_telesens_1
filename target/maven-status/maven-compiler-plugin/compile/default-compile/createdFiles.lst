@@ -1,3 +1,4 @@
+com\academy\telesens\lesson15\ListToArray.class
 com\academy\telesens\Operator\Demo2.class
 com\academy\telesens\lesson_04\home_task\Task3.class
 com\academy\telesens\lesson_07\PolymorphismDemo.class
@@ -100,6 +101,7 @@ com\academy\telesens\lesson_08\home_task\ResetTime.class
 com\academy\telesens\lesson_12\Demo1_read.class
 com\academy\telesens\lesson_12\model\dao\jdbc\SubscriberDaoImpl.class
 com\academy\telesens\CustomeDate\Demo\DayOfWeekDemo.class
+com\academy\telesens\util\ReadTestDateCSV.class
 com\academy\telesens\lesson_04\home_task\Task10.class
 com\academy\telesens\lesson_10\generic\DemoPair.class
 com\academy\telesens\lesson_10\home_task\Task3.class
@@ -151,6 +153,7 @@ com\academy\telesens\Person\Genious.class
 com\academy\telesens\lesson_08\home_task\ReturnStringWithoutGaps.class
 com\academy\telesens\lesson_03\home_task\Task7.class
 com\academy\telesens\lesson_04\home_task\Task4.class
+com\academy\telesens\util\Demo.class
 com\academy\telesens\lesson_01\task_01\Demo.class
 com\academy\telesens\Person\Boxer.class
 com\academy\telesens\CustomeDate\DayOfWeek.class
