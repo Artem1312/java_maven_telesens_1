@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="homeTaskAutomationPractice">
+    <test name="homeTaskAutomationPractice">
+        <classes>
+            <class name="com.academy.test.LoginTest" />
+            <class name="com.academy.test.AddAddress" />
+            <class name="com.academy.test.DeleteAddressTest" />
+        </classes>
+    </test>
+</suite>

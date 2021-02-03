@@ -6,6 +6,7 @@
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.academy.test.AutomationPracticeTest" />
+            <class name="com.academy.test.LoginTest" />
             <!--<class name="com.academy.test.ValidLoginTest" />
             <class name="com.academy.test.InvalidLoginTest" />
             <class name="com.academy.test.InvalidAuthTest" />
