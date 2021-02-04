@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,6 +102,16 @@
                       <a href="#" panel-name="suite-default_suite" class="show-methods passed suite-default_suite"> (show)</a> <!-- show-methods passed suite-default_suite -->
                     </span>
                     <div class="method-list-content passed suite-default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-default_suite" title="com.academy.test.LoginTest" class="method navigator-link" hash-for-method="testFeature1(apukhtin.artem@gmail.com, 111111, Authentication failed.)">testFeature1(apukhtin.artem@gmail.com, 111111, Authentication failed.)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-default_suite" title="com.academy.test.LoginTest" class="method navigator-link" hash-for-method="testFeature1(apukhtin.artem@gmail.com, , Password is required.)">testFeature1(apukhtin.artem@gmail.com, , Password is required.)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-default_suite" title="com.academy.test.AutomationPracticeTest" class="method navigator-link" hash-for-method="testMove">testMove</a> <!-- method navigator-link -->
@@ -172,6 +182,30 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-default_suite-class-passed -->
+          <div class="suite-default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.academy.test.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFeature1(apukhtin.artem@gmail.com, 111111, Authentication failed.)">
+                  </a> <!-- testFeature1(apukhtin.artem@gmail.com, 111111, Authentication failed.) -->
+                  <span class="method-name">testFeature1</span>
+                  <span class="parameters">(apukhtin.artem@gmail.com, 111111, Authentication failed.)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFeature1(apukhtin.artem@gmail.com, , Password is required.)">
+                  </a> <!-- testFeature1(apukhtin.artem@gmail.com, , Password is required.) -->
+                  <span class="method-name">testFeature1</span>
+                  <span class="parameters">(apukhtin.artem@gmail.com, , Password is required.)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-default_suite-class-passed -->
         </div> <!-- panel default_suite -->
         <div panel-name="test-xml-default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -186,6 +220,7 @@
     &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.academy.test.AutomationPracticeTest&quot;/&gt;
+      &lt;class name=&quot;com.academy.test.LoginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- automation practice demo --&gt;
 &lt;/suite&gt; &lt;!-- default-suite --&gt;
@@ -199,7 +234,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">automation practice demo (1 class)</span>
+                <span class="test-name">automation practice demo (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -225,28 +260,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testMove')
-data.setCell(0, 2, 'com.academy.test.AutomationPracticeTest')
-data.setCell(0, 3, 6581);
+data.setCell(0, 1, 'testFeature1')
+data.setCell(0, 2, 'com.academy.test.LoginTest')
+data.setCell(0, 3, 9377);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testUntitledTestCase')
 data.setCell(1, 2, 'com.academy.test.AutomationPracticeTest')
-data.setCell(1, 3, 5091);
+data.setCell(1, 3, 8902);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testUntitledTestCase')
 data.setCell(2, 2, 'com.academy.test.AutomationPracticeTest')
-data.setCell(2, 3, 4136);
+data.setCell(2, 3, 8238);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testWomenCategory')
+data.setCell(3, 1, 'testMove')
 data.setCell(3, 2, 'com.academy.test.AutomationPracticeTest')
-data.setCell(3, 3, 4047);
+data.setCell(3, 3, 7668);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testWomenCategory')
+data.setCell(4, 2, 'com.academy.test.AutomationPracticeTest')
+data.setCell(4, 3, 5943);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testFeature1')
+data.setCell(5, 2, 'com.academy.test.LoginTest')
+data.setCell(5, 3, 5542);
 window.suiteTableData['default_suite']= { tableData: data, tableDiv: 'times-div-default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 45 seconds</span>
               <div id="times-div-default_suite">
               </div> <!-- times-div-default_suite -->
             </div> <!-- times-div -->
@@ -279,23 +322,42 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testMove</span>
-                <span class="method-start">4725 ms</span>
+                <span class="method-start">5763 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testUntitledTestCase(apukhtin.artem@gmail.com, 111111, Authentication failed.)</span>
-                <span class="method-start">11308 ms</span>
+                <span class="method-start">13436 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testUntitledTestCase(apukhtin.artem@gmail.com, , Password is required.)</span>
-                <span class="method-start">16400 ms</span>
+                <span class="method-start">21675 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testWomenCategory</span>
-                <span class="method-start">20536 ms</span>
+                <span class="method-start">30577 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">24584 ms</span>
+                <span class="method-start">36520 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.academy.test.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">37454 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testFeature1(apukhtin.artem@gmail.com, 111111, Authentication failed.)</span>
+                <span class="method-start">41513 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testFeature1(apukhtin.artem@gmail.com, , Password is required.)</span>
+                <span class="method-start">50890 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">56432 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

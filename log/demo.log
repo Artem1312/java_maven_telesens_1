@@ -1,0 +1,3 @@
+[INFO ] 2021-02-04 20:54:22.215 [main] Demo:10-Test logger date
+[ERROR] 2021-02-04 20:54:22.232 [main] Demo:11-Test logger
+[DEBUG] 2021-02-04 20:54:22.232 [main] Demo:12-Test logger

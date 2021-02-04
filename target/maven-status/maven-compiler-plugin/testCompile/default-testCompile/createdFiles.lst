@@ -6,3 +6,4 @@ com\academy\test\TCInvalidLoginInUserAria.class
 com\academy\test\InvalidAuthTest.class
 com\academy\test\AutomationPracticeTest.class
 com\academy\test\TrueconfUserAriaLoginTest.class
+com\academy\test\LoginTest.class
