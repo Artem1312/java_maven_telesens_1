@@ -1,3 +1,6 @@
 [INFO ] 2021-02-04 20:54:22.215 [main] Demo:10-Test logger date
 [ERROR] 2021-02-04 20:54:22.232 [main] Demo:11-Test logger
 [DEBUG] 2021-02-04 20:54:22.232 [main] Demo:12-Test logger
+[INFO ] 2021-02-05 21:44:36.317 [main] LoggingDemo:16-Info message data
+[ERROR] 2021-02-05 21:44:36.321 [main] LoggingDemo:17-Error message
+[DEBUG] 2021-02-05 21:44:36.321 [main] LoggingDemo:18-Debug message. Person: name Vitaly, age 28
