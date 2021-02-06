@@ -12,6 +12,8 @@ import com.academy.telesens.util.PropertiesProvider;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
@@ -20,10 +22,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class AutomationPracticeTest extends BaseTest{
-
+    private static Logger LOG = LoggerFactory.getLogger(AutomationPracticeTest.class);
     private String baseUrl = "http://automationpractice.com/index.php";
-
-
 
     @Test(dataProvider = "authDataProvider")
     public void testUntitledTestCase(String userName, String password, String errExpected) throws Exception {
@@ -88,6 +88,8 @@ public class AutomationPracticeTest extends BaseTest{
 
         String userNameActual = myAccountPage.getUserName();
         Assert.assertEquals(userNameActual, expectedUserName);
+
+//      myAccountPage.logout();
     }
 
 
