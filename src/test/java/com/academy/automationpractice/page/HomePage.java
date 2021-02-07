@@ -13,13 +13,13 @@ public class HomePage extends BasePage{
     @FindBy(linkText = "Sign in")
     private WebElement signInLink;
 
-    @FindBy(linkText = "Women")
+    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
     private WebElement Women;
 
-    @FindBy(linkText = "Dresses")
+    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
     private WebElement Dresses;
 
-    @FindBy(linkText = "T-shirts")
+    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[3]/a")
     private WebElement TShirts;
 
 

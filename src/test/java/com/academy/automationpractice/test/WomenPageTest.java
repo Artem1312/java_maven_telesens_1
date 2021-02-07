@@ -13,7 +13,7 @@ public class WomenPageTest extends BaseTest {
     private String baseUrl = "http://automationpractice.com/index.php";
 
     @Test(dataProvider = "titleWomenPageProvider")
-    public void checkTitlePageTest(String exceptionTitle) throws Exception {
+    public void checkTitlePageTest(String expectedTitle) throws Exception {
         HomePage homePage = new HomePage(driver, baseUrl);
         homePage = homePage.goToHome();
         WomenPage womenPage = homePage.goToCategoryWomen();
@@ -25,63 +25,63 @@ public class WomenPageTest extends BaseTest {
         }
 
         String actualTitle = womenPage.getTitle();
-        Assert.assertEquals(actualTitle, exceptionTitle);
+        Assert.assertEquals(actualTitle, expectedTitle);
     }
 
     @Test(dataProvider = "pointNavigatorProvider")
-    public void checkPointNavigatorTest(String exceptionPoint){
+    public void checkPointNavigatorTest(String expectedPoint){
         HomePage homePage = new HomePage(driver, baseUrl);
         homePage = homePage.goToHome();
         WomenPage womenPage = homePage.goToCategoryWomen();
         //womenPage.getNavigatorName();
 
         String actualPoint = womenPage.getNavigatorName();
-        Assert.assertEquals(actualPoint, exceptionPoint);
+        Assert.assertEquals(actualPoint, expectedPoint);
     }
 
     @Test(dataProvider = "titleBlockProvider")
-    public void checkTitleBlockTest(String exceptionTitleBlock) {
+    public void checkTitleBlockTest(String expectedTitleBlock) {
         HomePage homePage = new HomePage(driver, baseUrl);
         homePage = homePage.goToHome();
         WomenPage womenPage = homePage.goToCategoryWomen();
 
         String actualTitleBlock = womenPage.getTitleBlockName();
-        Assert.assertEquals(actualTitleBlock, exceptionTitleBlock);
+        Assert.assertEquals(actualTitleBlock, expectedTitleBlock);
     }
 
     @Test(dataProvider = "CategoryProvider")
-    public void checkCategoryTest(String exceptionCategoryName, String exceptionFirstLineFromCategoryName) {
+    public void checkCategoryTest(String expectedCategoryName, String expectedFirstLineFromCategoryName) {
         HomePage homePage = new HomePage(driver, baseUrl);
         homePage = homePage.goToHome();
         WomenPage womenPage = homePage.goToCategoryWomen();
 
         String actualCategoryName = womenPage.getCategoryName();
-        Assert.assertEquals(actualCategoryName, exceptionCategoryName);
+        Assert.assertEquals(actualCategoryName, expectedCategoryName);
 
         String actualFirstLineFromCategoryName = womenPage.getFirstLineFromCategoryName();
-        Assert.assertEquals(actualFirstLineFromCategoryName, exceptionFirstLineFromCategoryName);
+        Assert.assertEquals(actualFirstLineFromCategoryName, expectedFirstLineFromCategoryName);
 
 
     }
 
     @Test(dataProvider = "headingCounterProvider")
-    public void checkHeadingCounterTest(String exceptionHeadingCounter) {
+    public void checkHeadingCounterTest(String expectedHeadingCounter) {
         HomePage homePage = new HomePage(driver, baseUrl);
         homePage = homePage.goToHome();
         WomenPage womenPage = homePage.goToCategoryWomen();
 
         String actualHeadingCounter = womenPage.getHeadingCounter();
-        Assert.assertEquals(actualHeadingCounter, exceptionHeadingCounter);
+        Assert.assertEquals(actualHeadingCounter, expectedHeadingCounter);
     }
 
     @Test(dataProvider = "nameOfCategoryElementProvider")
-    public void checkFooterTest(String exceptionNameOfCategoryElement) {
+    public void checkFooterTest(String expectedNameOfCategoryElement) {
         HomePage homePage = new HomePage(driver, baseUrl);
         homePage = homePage.goToHome();
         WomenPage womenPage = homePage.goToCategoryWomen();
 
         String actualNameOfCategoryElement = womenPage.getNameOfCategoryElement();
-        Assert.assertEquals(actualNameOfCategoryElement, exceptionNameOfCategoryElement);
+        Assert.assertEquals(actualNameOfCategoryElement, expectedNameOfCategoryElement);
     }
 
     @DataProvider(name = "titleWomenPageProvider")
