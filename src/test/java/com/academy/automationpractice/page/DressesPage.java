@@ -5,8 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.nio.channels.SelectableChannel;
 
 public class DressesPage extends BasePage{
     private static Logger LOG = LoggerFactory.getLogger(HomePage.class);
@@ -50,6 +53,33 @@ public class DressesPage extends BasePage{
 
     @FindBy(xpath = "//*[@id=\"layered_price_slider\"]/a[2]")
     private WebElement maxPrizeBtnSlider;
+
+    @FindBy(css = "#layered_id_attribute_group_7")
+    private WebElement beige;
+
+    @FindBy(css = "#layered_id_attribute_group_11")
+    private WebElement black;
+
+    @FindBy(css = "#layered_id_attribute_group_14")
+    private WebElement blue;
+
+    @FindBy(css = "#layered_id_attribute_group_16")
+    private WebElement yellow;
+
+    @FindBy(css = "#layered_id_attribute_group_8")
+    private WebElement white;
+
+    @FindBy(css = "##layered_id_attribute_group_13")
+    private WebElement orange;
+
+    @FindBy(css = "#layered_id_attribute_group_15")
+    private WebElement green;
+
+    @FindBy(css = "#layered_id_attribute_group_24")
+    private WebElement pink;
+
+    @FindBy(tagName = "select")
+    private WebElement sortBy;
 
     public DressesPage(WebDriver driver) {
         super(driver);
@@ -152,6 +182,68 @@ public class DressesPage extends BasePage{
 //        Double prizeList;
 //        //return prizeList;
 //    }
-//
 
+    public void setColor(String color){
+        switch (color){
+            case "beige":
+                beige.click();
+                break;
+            case "black":
+                black.click();
+                break;
+            case "blue":
+                blue.click();
+                break;
+            case "yellow":
+                yellow.click();
+                break;
+            case "white":
+                white.click();
+                break;
+            case "orange":
+                orange.click();
+                break;
+            case "green":
+                green.click();
+                break;
+            case "pink":
+                pink.click();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void makeSortBy (String sortingBy){
+        Select select = new Select(sortBy);
+
+        switch (sortingBy){
+            case "--":
+                select.selectByValue("position:asc");
+                break;
+            case "PriceLowestFirst":
+                select.selectByValue("price:asc");
+                break;
+            case "PriceHighestFirst":
+                select.selectByValue("price:desc");
+                break;
+            case "ProductNameAtoZ":
+                select.selectByValue("name:asc");
+                break;
+            case "ProductNameZtoA":
+                select.selectByValue("name:desc");
+                break;
+            case "InStock":
+                select.selectByValue("quantity:desc");
+                break;
+            case "ReferenceLowestFirst":
+                select.selectByValue("reference:asc");
+                break;
+            case "ReferenceHighestFirst":
+                select.selectByValue("reference:desc");
+                break;
+            default:
+                break;
+        }
+    }
 }
