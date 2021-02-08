@@ -1,7 +1,9 @@
 package com.academy.automationpractice.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,6 +41,15 @@ public class DressesPage extends BasePage{
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/h5/a")
     private WebElement printedDress;
+
+    @FindBy(xpath = "//*[@id=\"layered_price_range\"]")
+    private WebElement PrizeValues;
+
+    @FindBy(xpath = "//*[@id=\"layered_price_slider\"]/a[1]")
+    private WebElement minPrizeBtmSlider;
+
+    @FindBy(xpath = "//*[@id=\"layered_price_slider\"]/a[2]")
+    private WebElement maxPrizeBtnSlider;
 
     public DressesPage(WebDriver driver) {
         super(driver);
@@ -104,4 +115,43 @@ public class DressesPage extends BasePage{
         printedDress.click();
         return new CategoryPage(driver);
     }
+
+    public double getMinPrizeSlide(){
+        double minPrizeValue = Double.parseDouble(PrizeValues.getText().substring(1,5));
+        return minPrizeValue;
+    }
+
+    public double getMaxPrizeSlide(){
+        double maxPrizeValue = Double.parseDouble(PrizeValues.getText().substring(10,14));
+        return maxPrizeValue;
+    }
+
+    public void setMinPrize(double minPrize){
+        double value = 0.0;
+        //WebElement slider = minPrizeBtmSlider
+        Actions webelement = new Actions(driver);
+
+        do{
+            value = getMinPrizeSlide();
+            webelement.clickAndHold(minPrizeBtmSlider).moveByOffset(1,0);
+        } while(value != minPrize);
+    }
+
+    public void setMaxPrize(double maxPrize){
+        double value = 0.0;
+        //WebElement slider = minPrizeBtmSlider
+        Actions webelement = new Actions(driver);
+
+        do{
+            value = getMaxPrizeSlide();
+            webelement.clickAndHold(maxPrizeBtnSlider).moveByOffset(-1,0);
+        } while(value != maxPrize);
+    }
+
+//    public Double getListPrize(){
+//        Double prizeList;
+//        //return prizeList;
+//    }
+//
+
 }

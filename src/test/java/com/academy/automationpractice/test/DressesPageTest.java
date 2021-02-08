@@ -78,6 +78,21 @@ public class DressesPageTest extends BaseTest{
 
     }
 
+    @Test(dataProvider = "testValuePrizeProvider")
+    public void Test(double minTestPrize, double maxTestPrize, double minTestPrizeExpected, double maxTestPrizeExpected){
+        HomePage homePage = new HomePage(driver, baseUrl);
+        homePage = homePage.goToHome();
+        DressesPage dressesPage = homePage.goToCategoryDresses();
+        dressesPage.setMinPrize(minTestPrize);
+        dressesPage.setMaxPrize(maxTestPrize);
+        //dressesPage.getListPrize();
+        /*
+
+		- Выполнить проверку: 1) все позиции имеют цену заданного диапазона (напр. 30.00 до 40.00)
+		(точные значения границ цен не важны)
+         */
+    }
+
     @DataProvider(name = "PrintedDressPositionProvider")
     public Object[][] PrintedDressPositionProvider() {
         return new Object[][]{
@@ -91,4 +106,13 @@ public class DressesPageTest extends BaseTest{
                 {"S", "Cotton"}
         };
     }
+
+    @DataProvider(name = "testValuePrizeProvider")
+    public Object[][] testValuePrizeProvider() {
+        return new Object[][]{
+                {30.00, 40.00, 30.00, 40.00}
+        };
+    }
+
+
 }
