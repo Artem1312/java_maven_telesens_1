@@ -32,7 +32,6 @@ public class SuccessLoginTest extends BaseTest{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         //разлогин
         myAccountPage.logout();
     }

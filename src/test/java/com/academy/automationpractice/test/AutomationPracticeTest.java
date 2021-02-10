@@ -121,15 +121,9 @@ public class AutomationPracticeTest extends BaseTest{
         Actions webelement = new Actions(driver);
         webelement.clickAndHold(slider).moveByOffset(50,0);
 
-//        do{
-//
-//        } while();
-
-
         String expSum = "$16.00 - $53.00";
         String actSun = driver.findElement(By.xpath("//*[@id=\"layered_price_range\"]")).getText();
         Assert.assertEquals(expSum, actSun);
-
     }
 
     @DataProvider(name ="authDataProvider")

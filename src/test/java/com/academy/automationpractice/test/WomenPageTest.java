@@ -60,8 +60,6 @@ public class WomenPageTest extends BaseTest {
 
         String actualFirstLineFromCategoryName = womenPage.getFirstLineFromCategoryName();
         Assert.assertEquals(actualFirstLineFromCategoryName, expectedFirstLineFromCategoryName);
-
-
     }
 
     @Test(dataProvider = "headingCounterProvider")

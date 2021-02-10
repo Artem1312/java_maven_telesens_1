@@ -75,7 +75,6 @@ public class DressesPageTest extends BaseTest{
 
         Assert.assertEquals(actualSize, expectedSize);
         Assert.assertEquals(actualComposition, expectedComposition);
-
     }
 
     @Test(dataProvider = "testValuePrizeProvider")
@@ -87,7 +86,6 @@ public class DressesPageTest extends BaseTest{
         dressesPage.setMaxPrize(maxTestPrize);
         //dressesPage.getListPrize();
         /*
-
 		- Выполнить проверку: 1) все позиции имеют цену заданного диапазона (напр. 30.00 до 40.00)
 		(точные значения границ цен не важны)
          */
@@ -113,6 +111,4 @@ public class DressesPageTest extends BaseTest{
                 {30.00, 40.00, 30.00, 40.00}
         };
     }
-
-
 }
