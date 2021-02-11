@@ -15,7 +15,7 @@ public class DressesPage extends BasePage{
     private static Logger LOG = LoggerFactory.getLogger(HomePage.class);
     private String baseUrl;
 
-    @FindBy(xpath = "//*[@id=\"layered_id_attribute_group_1\"]")
+    @FindBy(xpath = "//*[@id=\"layered_id_attribute_group_1090\"]")
     private WebElement sizeS;
 
     @FindBy(xpath = "//*[@id=\"layered_id_attribute_group_2\"]")
