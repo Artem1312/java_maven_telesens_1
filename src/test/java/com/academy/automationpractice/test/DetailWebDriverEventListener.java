@@ -2,6 +2,7 @@ package com.academy.automationpractice.test;
 
 import com.academy.telesens.util.PropertiesProvider;
 import org.openqa.selenium.*;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,30 +16,21 @@ import java.util.logging.ErrorManager;
 
 public class DetailWebDriverEventListener extends AbstractWebDriverEventListener {
     private static Logger LOG = LoggerFactory.getLogger(DetailWebDriverEventListener.class);
-
-    @Override
-    public void onException(Throwable throwable, WebDriver driver) {
-        LOG.error("Error. Deteils: {}",throwable.getMessage());
-        makeScreenshot(driver);
-        super.onException(throwable, driver);
-    }
-
-    public void makeScreenshot(WebDriver driver) {
-        String screenshotDir = PropertiesProvider.get("screenshot.dir");
-        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String screenName = "screen_" + System.currentTimeMillis()+".png";
-        String screenPath =  screenshotDir + "/" + screenName;
-        try {
-            Files.copy(new FileInputStream(tmp), Path.of(screenPath));
-        } catch (IOException exc) {
-            LOG.error("Error copying screenshot from '{}' to '{}'. Details: {}",
-                    tmp, screenPath, exc);
-        }
-    }
+    protected static final Logger LOG_BROWSER = LoggerFactory.getLogger("BROWSER");
+    protected static final Logger LOG_PERFORMANCE = LoggerFactory.getLogger("PERFORMANCE");
 
     @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
         LOG.info("go to url {}", url);
+    }
+
+    @Override
+    public void afterNavigateTo(String url, WebDriver driver) {
+        LOG_BROWSER.debug("Navigated to {}", url);
+        driver.manage().logs().get(LogType.BROWSER).forEach(e->LOG_BROWSER.debug(e.getMessage()));
+
+        LOG_PERFORMANCE.debug("Navigated to {}", url);
+        driver.manage().logs().get(LogType.PERFORMANCE).forEach(e->LOG_PERFORMANCE.debug(e.getMessage()));
     }
 
     @Override
@@ -54,5 +46,26 @@ public class DetailWebDriverEventListener extends AbstractWebDriverEventListener
             tagName = element.getTagName();
 
         LOG.debug("Found element <{}>  by '{}'", tagName, by);
+    }
+
+
+    @Override
+    // Все ошибки будут переданы в этот метод
+    public void onException(Throwable throwable, WebDriver driver) {
+        LOG.error("Error. Details: {}", throwable.getMessage());
+        makeScreenshot(driver);
+    }
+
+    public void makeScreenshot(WebDriver driver) {
+        String screenshotDir = PropertiesProvider.get("screenshot.dir");
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String screenName = "screen_" + System.currentTimeMillis()+".png";
+        String screenPath =  screenshotDir + "/" + screenName;
+        try {
+            Files.copy(new FileInputStream(tmp), Path.of(screenPath));
+        } catch (IOException exc) {
+            LOG.error("Error copying screenshot from '{}' to '{}'. Details: {}",
+                    tmp, screenPath, exc);
+        }
     }
 }

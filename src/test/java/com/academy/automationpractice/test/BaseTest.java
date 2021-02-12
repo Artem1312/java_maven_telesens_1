@@ -28,7 +28,7 @@ public class BaseTest {
     private static Logger LOG = LoggerFactory.getLogger(BaseTest.class);
     private static Logger LOG_TRAFFIC = LoggerFactory.getLogger("TRAFFIC");
 
-    protected EventFiringWebDriver  driver;
+    protected EventFiringWebDriver driver;
     private BrowserMobProxy proxy;
     private DetailWebDriverEventListener eventListener;
 
@@ -82,6 +82,7 @@ public class BaseTest {
         for (int i = 0; i < entries.size(); i++) {
             HarEntry item = entries.get(i);
             LOG_TRAFFIC.debug(item.getResponse().getStatus() + ":" + item.getRequest().getUrl());
+            // LOG_TRAFFIC.debug(item.getRequest().getHeaders().toString());
         }
 
         if (driver != null)
