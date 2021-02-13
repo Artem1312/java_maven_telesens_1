@@ -1,18 +1,18 @@
 package com.academy.telesens.lesson_12;
 
-import com.academy.telesens.util.PropertiesProvider;
+import com.academy.telesens.util.PropertyProvider;
 
 import java.sql.*;
 
 public class DemoMySQL {
     public static void main(String[] args) {
 
-        String dburl2 = PropertiesProvider.get("db.url");
+        String dburl2 = PropertyProvider.get("db.url");
         System.out.println(dburl2);
-        String test = PropertiesProvider.get("demo.test");
+        String test = PropertyProvider.get("demo.test");
         System.out.println(test);
 
-        String url = PropertiesProvider.get("db.url");
+        String url = PropertyProvider.get("db.url");
         //String url = "jdbc:mysql://localhost:3306/mobile?user=root&password=Bonk2021";
         //String url = "jdbc:mysql://localhost:3306/mobile?user=root&password=Bonk2021";
         String sqlInsert = "INSERT INTO mobile.subscriber\n" +

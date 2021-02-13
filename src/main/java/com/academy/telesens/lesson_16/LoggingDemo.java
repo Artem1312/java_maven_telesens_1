@@ -2,7 +2,7 @@ package com.academy.telesens.lesson_16;
 
 
 import com.academy.telesens.Person.Person;
-import com.academy.telesens.util.PropertiesProvider;
+import com.academy.telesens.util.PropertyProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +18,6 @@ public class LoggingDemo {
         LOG.debug("Debug message. Person: name {}, age {}",
                 person.getFirstName(), person.getAge()); // Подробности
 
-        PropertiesProvider.get("db.url");
+        PropertyProvider.get("db.url");
     }
 }

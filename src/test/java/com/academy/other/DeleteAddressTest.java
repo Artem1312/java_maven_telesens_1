@@ -1,6 +1,6 @@
 package com.academy.other;
 
-import com.academy.automationpractice.test.BaseTest;
+import com.academy.automationpractice.ddt.core.BaseTest;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.Assert;

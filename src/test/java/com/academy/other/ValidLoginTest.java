@@ -3,7 +3,7 @@ package com.academy.other;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
-import com.academy.telesens.util.PropertiesProvider;
+import com.academy.telesens.util.PropertyProvider;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -20,7 +20,7 @@ public class ValidLoginTest {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
+        System.setProperty("webdriver.chrome.driver", PropertyProvider.get("driver.chrome"));
         //System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
         driver = new ChromeDriver();
         //driver = new FirefoxDriver();

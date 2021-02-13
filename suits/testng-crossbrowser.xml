@@ -4,7 +4,7 @@
     <test name="automation practice demo">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="com.academy.automationpractice.test.AutomationPracticeTest" />
+            <class name="com.academy.automationpractice.ddt.test.AutomationPracticeTest" />
 
             <!--<class name="com.academy.test.InvalidAuthTest" />-->
             <!--<class name="com.academy.test.ValidLoginTest" />
@@ -17,7 +17,7 @@
     <test name="automation practice firefox">
         <parameter name="browser" value="firefox" />
         <classes>
-            <class name="com.academy.automationpractice.test.AutomationPracticeTest" />
+            <class name="com.academy.automationpractice.ddt.test.AutomationPracticeTest" />
             <!--<class name="com.academy.test.InvalidAuthTest" />
 
             <class name="com.academy.test.ValidLoginTest" />

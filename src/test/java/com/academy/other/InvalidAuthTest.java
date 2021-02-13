@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import com.academy.telesens.util.PropertiesProvider;
+import com.academy.telesens.util.PropertyProvider;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,12 +31,12 @@ public class InvalidAuthTest {
     public void setUp(@Optional("chrome") String browser) throws Exception {
         switch (browser){
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
+                System.setProperty("webdriver.chrome.driver", PropertyProvider.get("driver.chrome"));
                 driver = new ChromeDriver();
                 break;
 
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
+                System.setProperty("webdriver.gecko.driver", PropertyProvider.get("driver.firefox"));
                 driver = new FirefoxDriver();
                 break;
             default:
@@ -47,10 +47,10 @@ public class InvalidAuthTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        File file = new File(PropertiesProvider.get("automation.auth.data.csv","automationpractice.properties"));
+        File file = new File(PropertyProvider.get("automation.auth.data.csv","automationpractice.properties"));
         Reader in = new FileReader(file);
 
-        baseTestUrl = PropertiesProvider.get("BaseAutomationPracticeUrl");
+        baseTestUrl = PropertyProvider.get("BaseAutomationPracticeUrl");
 
         records = new ArrayList<List<String>>();
         try (CSVReader csvReader = new CSVReader(new FileReader(file));) {

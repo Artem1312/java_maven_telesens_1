@@ -1,6 +1,6 @@
 package com.academy.other;
 
-import com.academy.automationpractice.test.BaseTest;
+import com.academy.automationpractice.ddt.core.BaseTest;
 import org.testng.annotations.Test;
 
 public class NewFeatureTests extends BaseTest {

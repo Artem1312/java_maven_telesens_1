@@ -1,6 +1,6 @@
 package com.academy.trueconf;
 
-import com.academy.telesens.util.PropertiesProvider;
+import com.academy.telesens.util.PropertyProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,8 +21,8 @@ public class TrueconfUserAriaLoginTest {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", PropertiesProvider.get("driver.chrome"));
-        //System.setProperty("webdriver.gecko.driver", PropertiesProvider.get("driver.firefox"));
+        System.setProperty("webdriver.chrome.driver", PropertyProvider.get("driver.chrome"));
+        //System.setProperty("webdriver.gecko.driver", PropertyProvider.get("driver.firefox"));
         driver = new ChromeDriver();
         //driver = new FirefoxDriver();
         baseUrl = "https://www.google.com/";

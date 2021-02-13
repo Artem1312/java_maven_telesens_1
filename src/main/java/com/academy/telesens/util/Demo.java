@@ -1,6 +1,6 @@
 package com.academy.telesens.util;
 
-import com.academy.telesens.util.PropertiesProvider;
+import com.academy.telesens.util.PropertyProvider;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
@@ -17,7 +17,7 @@ import java.util.List;
 public class Demo {
     public static void main(String[] args) throws IOException {
 
-        File file = new File(PropertiesProvider.get("automation.auth.invalid.data.csv"));
+        File file = new File(PropertyProvider.get("automation.auth.invalid.data.csv"));
         Reader in = new FileReader(file);
 
         List<List<String>> records = new ArrayList<List<String>>();
