@@ -16,7 +16,7 @@ public class AlloTests extends BaseTest {
         String priceRawText = gadget.getText();
         String digits = priceRawText.replaceAll(" ", "");
         int priceActual = Integer.parseInt(digits);
-        int priceExpected = 7499;
+        int priceExpected = 7999;
         AssertWrapper.assertEquals(priceActual, priceExpected);
 
     }

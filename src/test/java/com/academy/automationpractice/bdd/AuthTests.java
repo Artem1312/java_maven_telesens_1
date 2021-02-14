@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @CucumberOptions(
         features = {"test-data"},
-        glue = "com.academy.bdd.steps",
+        glue = "com.academy.automationpractice.bdd.steps",
         plugin = {"pretty",
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/CucumberTestReport.json",

@@ -43,3 +43,4 @@
 [DEBUG] 2021-02-14 16:31:42.179 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
 [DEBUG] 2021-02-14 16:44:19.714 [main] BROWSER:37-Navigated to https://localhost
 [DEBUG] 2021-02-14 16:44:19.729 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 18:54:56.618 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php

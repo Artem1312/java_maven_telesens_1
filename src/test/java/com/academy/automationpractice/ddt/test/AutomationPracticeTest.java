@@ -35,7 +35,6 @@ public class AutomationPracticeTest extends BaseTest {
 
         driver.findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
 
-
         String eerMsgActual = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
         Assert.assertEquals(errExpected, eerMsgActual);
     }

@@ -23,12 +23,13 @@ public class PropertyProvider {
         try {
             prop = new Properties();
             InputStream is = PropertyProvider.class.getClassLoader().getResourceAsStream(DEFAULT_PROP_FILE);
-            prop.load(is);
+            prop.load(is);  // загружаем физический файл с пропертями
         } catch (IOException | RuntimeException e) {
             LOG.error("Error prop initialization. Details: {}", e.getMessage());
         }
     }
 
+    // метод отдает проперти по ключу
     public static String get(String key) {
         return prop.getProperty(key);
     }
