@@ -1,8 +1,9 @@
 package com.academy.automationpractice.bdd.steps;
 
-import com.academy.ddt.page.HomePage;
-import com.academy.ddt.page.LoginPage;
-import com.academy.ddt.page.MyAccountPage;
+import com.academy.automationpractice.ddt.page.HomePage;
+import com.academy.automationpractice.ddt.page.HomePage;
+import com.academy.automationpractice.ddt.page.LoginPage;
+import com.academy.automationpractice.ddt.page.MyAccountPage;
 import com.academy.telesens.util.PropertyProvider;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
