@@ -12,7 +12,8 @@ import org.testng.annotations.Test;
 
 public class LoginUserAriaTest extends BaseTest {
     private static Logger LOG = LoggerFactory.getLogger(LoginUserAriaTest.class);
-    private String baseUrl = "http://qa3.trueconf.net";
+    //private String baseUrl = "http://qa3.trueconf.net";
+    private String baseUrl = "https://localhost";
 
     @Test(dataProvider = "authSuccessDataProvider")
     public void testAuthUsingPageObject(String login, String password, String expectedUserName) {
@@ -34,20 +35,20 @@ public class LoginUserAriaTest extends BaseTest {
         String userNameActual = accountPage.getUserName();
         Assert.assertEquals(userNameActual, expectedUserName);
 
-        //Просто ожидание на странице
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        //Просто ожидание на странице
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         //разлогин
-        accountPage.logout();
+        //accountPage.logout();
     }
 
     @DataProvider(name = "authSuccessDataProvider")
     public Object[][] authSuccessDataProvider() {
         return new Object[][] {
-                {"apukhtin1", "11", "Artem Apukhtin"}
+                {"apukhtin1", "11", "apukhtin1"}
         };
     }
 }

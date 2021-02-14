@@ -1,6 +1,7 @@
 package com.academy.automationpractice.ddt.page;
 
 import com.academy.automationpractice.ddt.core.BasePage;
+import com.academy.trueconf.page.AccountPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

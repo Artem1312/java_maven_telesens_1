@@ -1,0 +1,29 @@
+[DEBUG] 2021-02-14 12:26:02.845 [main] BROWSER:37-Navigated to http://qa3.trueconf.net
+[DEBUG] 2021-02-14 12:39:22.627 [main] BROWSER:37-Navigated to http://localhost
+[DEBUG] 2021-02-14 12:39:51.502 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:40:46.560 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:41:24.869 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:49:23.839 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:49:23.893 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 12:51:00.886 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:51:00.900 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 12:52:15.087 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:52:15.099 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 12:53:20.270 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:53:20.284 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 12:53:55.723 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:53:55.741 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 12:55:14.316 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:55:14.338 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 12:56:29.250 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:56:29.264 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 12:58:24.007 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 12:58:24.156 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 13:01:10.393 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 13:01:10.408 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 13:08:01.785 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 13:08:01.814 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 13:09:59.478 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 13:09:59.490 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 13:11:35.732 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 13:11:35.745 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME

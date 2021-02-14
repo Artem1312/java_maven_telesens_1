@@ -11,16 +11,19 @@ public class HomePage extends BasePage {
     private static Logger LOG = LoggerFactory.getLogger(com.academy.trueconf.page.HomePage.class);
     private String baseUrl;
 
+    //UA6UT-YWBC-6JTR-L3PE
+
+
     @FindBy (xpath = "//*[@id=\"main-header__buttons-login\"]/span")
     private WebElement SignIn;
 
-    @FindBy(xpath = "//*[@id=\"authorization__input-trueconfId\"]")
+    @FindBy(xpath = "//*[@id=\"tc-text-field-35\"]")
     private WebElement loginFiled;
 
-    @FindBy(xpath = "//*[@id=\"authorization__input-password\"]")
+    @FindBy(xpath = "//*[@id=\"tc-text-field-37\"]")
     private WebElement passwordFiled;
 
-    @FindBy(xpath = "//*[@id=\"authorization__button-sing-in\"]/span")
+    @FindBy(xpath = "//*[@id=\"tc-button-40\"]/span")
     private WebElement SignInButton;
 
     @FindBy(xpath = "//*[@id=\"main-header__buttons-home\"]/i")
@@ -132,4 +135,6 @@ public class HomePage extends BasePage {
         ConnectToConferenceButton.click();
         return new ConferencePage(driver);
     }
+
+
 }
