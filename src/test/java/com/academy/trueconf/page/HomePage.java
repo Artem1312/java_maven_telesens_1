@@ -124,9 +124,9 @@ public class HomePage extends BasePage {
         return new EquipmentPage(driver);
     }
 
-    public GuidesPage goToGuidesPage(){
+    public ManualPage goToGuidesPage(){
         OpenManualPageLink.click();
-        return new GuidesPage(driver);
+        return new ManualPage(driver);
     }
 
     public ConferencePage goToConferencePage(String confID){

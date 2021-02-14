@@ -27,3 +27,19 @@
 [DEBUG] 2021-02-14 13:09:59.490 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
 [DEBUG] 2021-02-14 13:11:35.732 [main] BROWSER:37-Navigated to https://localhost
 [DEBUG] 2021-02-14 13:11:35.745 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:23:32.562 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:23:32.582 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:25:01.073 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:25:01.088 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:26:37.899 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:26:37.916 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:27:35.424 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:27:35.438 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:28:46.638 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:28:46.651 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:30:17.221 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:30:17.234 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:31:42.164 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:31:42.179 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-14 16:44:19.714 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-14 16:44:19.729 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME

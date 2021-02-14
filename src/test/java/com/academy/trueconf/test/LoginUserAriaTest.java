@@ -41,8 +41,9 @@ public class LoginUserAriaTest extends BaseTest {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
+
         //разлогин
-        //accountPage.logout();
+        accountPage.logout();
     }
 
     @DataProvider(name = "authSuccessDataProvider")
