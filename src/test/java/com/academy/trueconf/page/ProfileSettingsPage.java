@@ -113,9 +113,9 @@ public class ProfileSettingsPage {
         return this;
     }
 
-    public ProfileSettingsPage deletePhoto(boolean flag){
+    public ProfileSettingsPage deletePhoto(boolean save){
         RemoveButton.click();
-        if (flag == true)
+        if (save == true)
             DeletePhotoButton.click();
         else
             AbortDeletePhotoButton.click();
@@ -129,12 +129,12 @@ public class ProfileSettingsPage {
         return this;
     }
 
-    public ProfileSettingsPage makePhoto(String numberCamera, boolean flag){
+    public ProfileSettingsPage makePhoto(String numberCamera, boolean save){
         MakePhotoButton.click();
         SelectCamera.click();
         selectCamera(numberCamera);
         MakePhotoButtonUseCamera.click();
-        if (flag == true)
+        if (save == true)
             SaveMadePhoto.click();
         else
             DoNotSavePhoto.click();
@@ -142,13 +142,13 @@ public class ProfileSettingsPage {
     }
 
     //дописать позже
-    public ProfileSettingsPage uploadPhoto(boolean flag){
+    public ProfileSettingsPage uploadPhoto(boolean save){
         UploadImageButton.click();
         UploadProfilePhotoButton.click();
         /*
         как то надо выбрать изображение
          */
-        if (flag == true)
+        if (save == true)
             SaveUploadPhoto.click();
         else
             AbortUploadPhoto.click();
@@ -203,7 +203,8 @@ public class ProfileSettingsPage {
                                               String companyName,
                                               String mobilePhone,
                                               String workPhone,
-                                              String homePhone){
+                                              String homePhone,
+                                              boolean save){
         editProfile();
 
         setDisplayName(displayName);
@@ -214,8 +215,44 @@ public class ProfileSettingsPage {
         setWorkPhone(workPhone);
         setHomePhone(homePhone);
 
-
-        saveEditProfile();
+        if (save == true)
+            saveEditProfile();
+        else
+            abortEditProfile();
         return this;
     }
+
+    public String getDisplayName(){
+        return DisplayNameFiled.getText();
+    }
+
+    public String getFirstName(){
+        return FirstNameFiled.getText();
+    }
+
+    public String getLastName(){
+        return LastNameFiled.getText();
+    }
+
+    public String getCompanyName(){
+        return CompanyFiled.getText();
+    }
+
+    public String getMobilePhone(){
+        return MobilePhoneFiled.getText();
+    }
+
+    public String getWorkPhone(){
+        return WorkPhoneFiled.getText();
+    }
+
+    public String getHomePhone(){
+        return HomePhoneFiled.getText();
+    }
+
+    public String getTrueConfID(){
+        return TrueconfIDFiled.getText();
+    }
+
+
 }
