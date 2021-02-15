@@ -94,6 +94,42 @@ public class ProfileSettingsPage {
     @FindBy(xpath = "//*[@id=\"tc-button-199\"]")
     private WebElement SaveUploadPhoto;
 
+    @FindBy(xpath = "//*[@id=\"tc-button-61\"]/span")
+    private WebElement ChangeEmail;
+
+    @FindBy(xpath = "/html/body/div/div[1]/div/div[1]/div/div/div/div[3]/div/div[1]/div[2]/label")
+    private WebElement Email;
+
+    @FindBy(xpath = "//*[@id=\"tc-button-269\"]/span")
+    private WebElement SaveNewEmailButton;
+
+    @FindBy(xpath = "//*[@id=\"tc-button-61\"]/span")
+    private WebElement DoNotSaveNewEmailButton;
+
+    @FindBy(xpath = "//*[@id=\"tc-text-field-271\"]")
+    private WebElement EmailFiled;
+
+    @FindBy(xpath = "/html/body/div/div[1]/div/div[1]/div/div/div/div[3]/div/div[1]/div[2]/div[1]/div[2]/div")
+    private WebElement ErrorAboutEmail;
+
+    @FindBy(xpath = "//*[@id=\"tc-button-63\"]/span")
+    private WebElement ChangePassword;
+
+    @FindBy(xpath = "//*[@id=\"tc-button-273\"]/span")
+    private WebElement SaveNewPassword;
+
+    @FindBy(xpath = "//*[@id=\"tc-button-63\"]/span")
+    private WebElement DoNotSavePassword;
+
+    @FindBy(xpath = "//*[@id=\"tc-text-field-275\"]")
+    private WebElement NewPasswordFiled;
+
+    @FindBy(xpath = "//*[@id=\"tc-text-field-277\"]")
+    private WebElement ConfirmNewPasswordFiled;
+
+    @FindBy(xpath = "/html/body/div/div[1]/div/div[1]/div/div/div/div[3]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div")
+    private WebElement ErrorAboutPassword;
+
     public ProfileSettingsPage(WebDriver driver) {
         super();
     }
@@ -254,5 +290,37 @@ public class ProfileSettingsPage {
         return TrueconfIDFiled.getText();
     }
 
+    public String getEmail(){
+        EmailAndPassword.click();
+        return Email.getText();//вернуть почту через регулярку надо отрезать "Email address: "
+    }
 
+    public ProfileSettingsPage setEmail(String email, boolean save){
+        EmailAndPassword.click();
+        ChangeEmail.click();
+        EmailFiled.click();
+        EmailFiled.clear();
+        EmailFiled.sendKeys(email);
+        if (save == true)
+            SaveNewEmailButton.click();
+        else
+            DoNotSaveNewEmailButton.click();
+        return this;
+    }
+
+    public ProfileSettingsPage setPassword(String password, String confirmPassword, boolean save){
+        EmailAndPassword.click();
+        ChangePassword.click();
+        NewPasswordFiled.click();
+        NewPasswordFiled.clear();
+        NewPasswordFiled.sendKeys(password);
+        ConfirmNewPasswordFiled.click();
+        ConfirmNewPasswordFiled.clear();
+        ConfirmNewPasswordFiled.sendKeys(confirmPassword);
+        if (save == true)
+            SaveNewPassword.click();
+        else
+            DoNotSavePassword.click();
+        return this;
+    }
 }
