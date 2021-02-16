@@ -32,7 +32,8 @@ public class AccountPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"tc-button-196\"]/span")
     private WebElement features;
 
-    @FindBy(xpath = "//*[@id=\"tc-button-198\"]/span")
+    //@FindBy(id = "tc-button-34")
+    @FindBy(xpath = "/html/body/div/div[1]/div/div[1]/div/section/div/div/div[1]/div[2]/div[2]/button/span")
     private WebElement profileSettings;
 
     @FindBy(xpath = "/html/body/div/div[1]/div/div[1]/div/section/aside/div/div/div[2]")
@@ -103,6 +104,8 @@ public class AccountPage extends BasePage {
 //    }
 
     public ProfileSettingsPage goToProfileSettings(){
+        Actions actions = new Actions(driver);
+        actions.click(profileSettings);
         profileSettings.click();
         return new ProfileSettingsPage(driver);
     }

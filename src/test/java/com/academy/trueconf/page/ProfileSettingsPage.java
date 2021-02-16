@@ -10,7 +10,7 @@ public class ProfileSettingsPage {
 
     private static Logger LOG = LoggerFactory.getLogger(com.academy.trueconf.page.AccountPage.class);
 
-    @FindBy(xpath = "//*[@id=\"tc-button-102\"]/span")
+    @FindBy(xpath = "/html/body/div/div[1]/div/div[1]/div/div/div/div[2]/div/div[2]/div[2]/div/div/button")
     private WebElement EditButton;
 
     @FindBy(xpath = "//*[@id=\"tc-button-102\"]/span")
@@ -135,7 +135,17 @@ public class ProfileSettingsPage {
     }
 
     public ProfileSettingsPage editProfile(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         EditButton.click();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 
