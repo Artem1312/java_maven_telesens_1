@@ -47,6 +47,36 @@ public class ProfileSettingTest extends BaseTest {
 
     }
 
+    @Test(dataProvider = "")
+    public void testSetPhone(String login,
+                             String password,
+                             String mobilePhone,
+                             String workPhone,
+                             String homePhone){
+        ProfileSettingsPage profilePage = new HomePage(driver, baseUrl)
+                .goToHome()
+                .login()
+                .inputLogin(login)
+                .inputPassword(password)
+                .submitSuccess()
+                .goToProfileSettings();
+
+        profilePage.editProfile();
+        profilePage.setMobilePhone(mobilePhone);
+        profilePage.setWorkPhone(workPhone);
+        profilePage.setHomePhone(homePhone);
+        profilePage.saveEditProfile();
+
+        String actualMPh = profilePage.getMobilePhone();
+        String actualWPh = profilePage.getWorkPhone();
+        String actualHPh = profilePage.getHomePhone();
+
+        Assert.assertEquals(actualMPh, mobilePhone);
+        Assert.assertEquals(actualWPh, workPhone);
+        Assert.assertEquals(actualHPh, homePhone);
+
+    }
+
     @DataProvider(name = "TestDataEditProfileProvider")
     public Object[][] TestDataEditProfileProvider() {
         return new Object[][] {
