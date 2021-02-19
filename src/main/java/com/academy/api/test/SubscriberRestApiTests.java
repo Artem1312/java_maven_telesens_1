@@ -2,6 +2,7 @@ package com.academy.api.test;
 
 
 import com.academy.telesens.Operator.Subscriber;
+import com.academy.telesens.Person.Gender;
 import io.netty.handler.logging.LogLevel;
 import io.restassured.RestAssured;
 import io.restassured.config.LogConfig;
@@ -39,7 +40,7 @@ public class SubscriberRestApiTests {
 
         String body = response.getBody().print();
         int code = response.getStatusCode();
-        int id = response.getBody().path("id" );
+        int id = response.getBody().path("id");
         String firstName = response.getBody().path("firstName");
         String lastName = response.getBody().path("lastName");
 
@@ -143,6 +144,19 @@ public class SubscriberRestApiTests {
     }
 
     private Subscriber getSubscriberById(int id) {
-        return new Subscriber();
+        Response response = given().get("/subscribers/{id}", id);
+        if (response.getStatusCode() != 200) {
+            return null;
+        }
+
+        Subscriber subscriber = new Subscriber();
+        subscriber.setFirstName("");
+        subscriber.setGender(Gender.parse("f"));
+        return subscriber;
+    }
+
+    private int deleteSubscriber(int id) {
+        int code = 200;
+        return code;
     }
 }

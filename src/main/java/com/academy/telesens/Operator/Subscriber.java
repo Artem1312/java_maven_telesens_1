@@ -4,6 +4,7 @@ import com.academy.telesens.Person.Gender;
 import com.academy.telesens.Person.Person;
 
 public class Subscriber  extends Person {
+    private int id;
     private String phoneNumber = null;
     private Operator operator;
     private String firstName;
@@ -30,6 +31,16 @@ public class Subscriber  extends Person {
     }
 
     //set/get
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
