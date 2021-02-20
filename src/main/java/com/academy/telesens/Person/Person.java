@@ -6,15 +6,14 @@ public class Person {
     //Gender gender = new Gender();
     protected String firstName;
     protected String lastName;
-    protected int age;
+    protected Integer age;
     protected Gender gender;
 //    private String firstName;
 //    private String lastName;
 //    private int age;
 
-
+    // Конструкторы
     public Person(){
-
     }
 
     public Person (String firstName, String lastName, int age, Gender gender) {
@@ -88,15 +87,17 @@ public class Person {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return Objects.equals(firstName, person.firstName) &&
-                Objects.equals(lastName, person.lastName);
+        return firstName.equals(person.firstName) &&
+                lastName.equals(person.lastName) &&
+                age.equals(person.age) &&
+                gender == person.gender;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName);
+        return Objects.hash(firstName, lastName, age, gender);
     }
 
     @Override

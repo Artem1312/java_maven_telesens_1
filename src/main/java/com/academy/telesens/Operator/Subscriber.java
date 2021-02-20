@@ -3,6 +3,8 @@ package com.academy.telesens.Operator;
 import com.academy.telesens.Person.Gender;
 import com.academy.telesens.Person.Person;
 
+import java.util.Objects;
+
 public class Subscriber  extends Person {
     private int id;
     private String phoneNumber = null;
@@ -131,4 +133,19 @@ public class Subscriber  extends Person {
                 ", gender=" + gender +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Subscriber)) return false;
+        if (!super.equals(o)) return false;
+        Subscriber that = (Subscriber) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id);
+    }
+
 }
