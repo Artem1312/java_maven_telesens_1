@@ -47,7 +47,7 @@ public class ProfileSettingTest extends BaseTest {
 
     }
 
-    @Test(dataProvider = "")
+    @Test(dataProvider = "TestSetPhoneProvider")
     public void testSetPhone(String login,
                              String password,
                              String mobilePhone,
@@ -77,10 +77,39 @@ public class ProfileSettingTest extends BaseTest {
 
     }
 
+    @Test(dataProvider = "TestSetAvatarProvider")
+    public void setAvatar(String login,
+                          String password){
+        ProfileSettingsPage profilePage = new HomePage(driver, baseUrl)
+                .goToHome()
+                .login()
+                .inputLogin(login)
+                .inputPassword(password)
+                .submitSuccess()
+                .goToProfileSettings()
+                .uploadPhoto(true);
+
+
+    }
+
+    @DataProvider(name = "TestSetAvatarProvider")
+    public Object[][] TestSetAvatarProvider() {
+        return new Object[][] {
+                {"apukhtin1", "11"}
+        };
+    }
+
     @DataProvider(name = "TestDataEditProfileProvider")
     public Object[][] TestDataEditProfileProvider() {
         return new Object[][] {
                 {"apukhtin1", "11", "Test User", "User1", "Test1"}
+        };
+    }
+
+    @DataProvider(name = "TestSetPhoneProvider")
+    public Object[][] TestSetPhoneProvider() {
+        return new Object[][] {
+                {"apukhtin1", "11", "380967561965", "380967561965", "380967561965"}
         };
     }
 }
