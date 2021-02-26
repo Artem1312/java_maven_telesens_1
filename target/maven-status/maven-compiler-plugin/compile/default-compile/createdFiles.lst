@@ -3,7 +3,6 @@ com\academy\telesens\Operator\Demo2.class
 com\academy\telesens\lesson_04\home_task\Task3.class
 com\academy\telesens\lesson_07\PolymorphismDemo.class
 com\academy\telesens\lesson_11\ReadExcelDemo.class
-com\academy\telesens\util\PropertiesProvider.class
 com\academy\telesens\lesson_08\StringInterface.class
 com\academy\telesens\lesson_09\home_task\GrateValueForSecond.class
 com\academy\telesens\lesson_09\home_task\IsZeroDayException.class
@@ -14,6 +13,7 @@ com\academy\telesens\lesson_10\home_task\Demo.class
 com\academy\telesens\lesson_12\model\Operator.class
 com\academy\telesens\lesson_12\model\Subscriber.class
 com\academy\telesens\lesson_12\model\dao\SubscriberDao.class
+com\academy\telesens\lesson_16\Demo.class
 com\academy\telesens\lesson_10\colection\Demo.class
 com\academy\telesens\lesson_11\home_task\MobileOperator.class
 com\academy\telesens\lesson_09\Demo.class
@@ -25,6 +25,7 @@ com\academy\telesens\lesson_11\LoggerDemo.class
 com\academy\telesens\CustomeDate\Demo\Demo2.class
 com\academy\telesens\lesson_09\from_materials\Demo.class
 com\academy\telesens\lesson_11\FileExersise.class
+com\academy\telesens\lesson_20\jsonDemo.class
 com\academy\telesens\lesson_11\home_task\Subscriber.class
 com\academy\telesens\lesson_09\home_task\DemoIllegalDateException.class
 com\academy\telesens\lesson_04\home_task\Task9.class
@@ -54,10 +55,12 @@ com\academy\telesens\lesson_05\Demo.class
 com\academy\telesens\lesson_05\Demo3.class
 com\academy\telesens\lesson_04\home_task\Task1.class
 com\academy\telesens\CustomeDate\DateFormat$1.class
+com\academy\api\test\NotFoundSubscriberException.class
 com\academy\telesens\lesson_08\home_task\Demo4.class
 com\academy\telesens\Operator\Subscriber.class
 com\academy\telesens\lesson_08\home_task\ReturnNum.class
 com\academy\telesens\Person\Demo\Demo.class
+com\academy\telesens\util\PropertyProvider.class
 com\academy\telesens\lesson_10\generic\Pair.class
 com\academy\telesens\Person\QualityAssurense.class
 com\academy\telesens\Person\Gender.class
@@ -86,6 +89,7 @@ com\academy\telesens\lesson_09\home_task\GrateValueForHour.class
 com\academy\telesens\lesson_01\task_01\socket\GetTime.class
 com\academy\telesens\Person\Fighter.class
 com\academy\telesens\lesson_01\task_01\socket\Main3.class
+com\academy\api\test\SubscriberRestApiTests.class
 com\academy\telesens\lesson_08\anonymous\AnonymousDemo.class
 com\academy\telesens\CustomeDate\CustomDateTimeExt.class
 com\academy\telesens\lesson_09\home_task\NegativeValueDayException.class
@@ -93,10 +97,12 @@ com\academy\telesens\Person\Demo\InterfaceDemo.class
 com\academy\telesens\Person\Dancer.class
 com\academy\telesens\lesson_12\Demo2_read_rows.class
 com\academy\telesens\lesson_11\Demo.class
+com\academy\telesens\lesson_20\resrSamples.class
 com\academy\telesens\lesson_04\home_task\Task7.class
 com\academy\telesens\Person\Tester.class
 com\academy\telesens\lesson_01\task_01\Demo2.class
 com\academy\telesens\lesson_12\home_task\DemoAddPhoneNumber.class
+com\academy\telesens\lesson_16\LoggingDemo.class
 com\academy\telesens\lesson_08\home_task\ResetTime.class
 com\academy\telesens\lesson_12\Demo1_read.class
 com\academy\telesens\lesson_12\model\dao\jdbc\SubscriberDaoImpl.class
@@ -157,6 +163,7 @@ com\academy\telesens\util\Demo.class
 com\academy\telesens\lesson_01\task_01\Demo.class
 com\academy\telesens\Person\Boxer.class
 com\academy\telesens\CustomeDate\DayOfWeek.class
+com\academy\telesens\lesson_20\RestSamples.class
 com\academy\telesens\lesson_12\model\dao\jdbc\PhoneBookDaoImpl.class
 com\academy\telesens\lesson_10\home_task\Task4.class
 com\academy\telesens\lesson_11\Demo2.class

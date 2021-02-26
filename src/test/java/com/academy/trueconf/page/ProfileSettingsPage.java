@@ -190,7 +190,8 @@ public class ProfileSettingsPage {
     //дописать позже
     public ProfileSettingsPage uploadPhoto(boolean save){
         UploadImageButton.click();
-        UploadProfilePhotoButton.click();
+        //UploadProfilePhotoButton.click();
+        UploadProfilePhotoButton.sendKeys("C:\\java-maven-1\\data\\test-image.png");
         /*
         как то надо выбрать изображение
          */

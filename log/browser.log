@@ -90,3 +90,48 @@
 [DEBUG] 2021-02-16 22:15:15.510 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
 [DEBUG] 2021-02-16 22:17:31.406 [main] BROWSER:37-Navigated to https://localhost
 [DEBUG] 2021-02-16 22:17:31.425 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 21:57:54.682 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-23 21:57:54.702 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:01:46.385 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-23 22:01:46.398 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:02:53.874 [main] BROWSER:37-Navigated to http://localhost
+[DEBUG] 2021-02-23 22:02:53.890 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:03:09.391 [main] BROWSER:37-Navigated to http://localhost
+[DEBUG] 2021-02-23 22:03:09.405 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:03:26.018 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-23 22:03:26.172 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:05:04.482 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-23 22:05:04.493 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:09:20.582 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-23 22:09:20.594 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:12:35.094 [main] BROWSER:37-Navigated to https://localhost
+[DEBUG] 2021-02-23 22:12:35.105 [main] BROWSER:38-qrc:///qtwebchannel/qwebchannel.js - Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME
+[DEBUG] 2021-02-23 22:16:41.005 [main] BROWSER:37-Navigated to https://allo.ua
+[DEBUG] 2021-02-23 22:19:20.640 [main] BROWSER:37-Navigated to https://allo.ua
+[DEBUG] 2021-02-25 20:12:45.396 [main] BROWSER:37-Navigated to https://allo.ua
+[DEBUG] 2021-02-25 20:15:34.222 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:15:42.492 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:15:56.487 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:16:10.116 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:16:26.048 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:16:39.351 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:16:43.997 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:16:57.709 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:17:11.757 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:19:52.583 [main] BROWSER:37-Navigated to https://allo.ua
+[DEBUG] 2021-02-25 20:21:44.747 [main] BROWSER:37-Navigated to https://allo.ua
+[DEBUG] 2021-02-25 20:24:55.555 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:25:06.968 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:25:23.242 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:25:39.159 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:25:53.943 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:26:06.771 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:26:12.409 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:26:26.424 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-25 20:26:40.631 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-26 20:53:08.546 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-26 20:53:15.134 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-26 20:53:29.037 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-26 20:53:42.851 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-26 20:53:55.709 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
+[DEBUG] 2021-02-26 20:54:46.620 [main] BROWSER:37-Navigated to http://automationpractice.com/index.php
